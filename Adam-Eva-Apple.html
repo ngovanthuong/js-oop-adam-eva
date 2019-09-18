@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Apple=function (weight) {
+       this.weightApple=weight;
+       this.getWeightApple=function () {
+           return this.weightApple;
+       };
+       this.setWeightApple=function (weight) {
+           this.weightApple=weight;
+       };
+       this.decreaseWeight=function () {
+           if (this.weightApple> 0) {
+              return this.weightApple -1;
+           }
+       }
+    };
+    let Human=function (name,gender,weight) {
+        this.name=name;
+        this.gender=gender;
+        this.weightHuman=weight;
+        this.getName=function () {
+            return this.name;
+        };
+        this.getWeight=function () {
+            return this.weightHuman
+        };
+        this.setName=function (name) {
+            this.name=name;
+        };
+        this.setWeight=function (weight) {
+            this.weightHuman=weight;
+        };
+        this.setGender=function(Gender) {
+            this.gender=Gender;
+        };
+        this.isMale=function () {
+                alert("this is a man")
+        };
+        this.checkApple=function (apple) {
+            if(apple.weightApple>0){
+                return apple.getWeightApple()
+            }
+
+        };
+        this.eatApple=function (apple) {
+               return  apple.decreaseWeight()
+        };
+        this.sayWord=function () {
+            alert("Hello world");
+        }
+
+    };
+    let Adam=new Human("adam","male",70);
+    let apple1=new Apple(10);
+    Adam.sayWord();
+    let weight= parseInt(Adam.getWeight());
+    alert("my name is "+ Adam.getName());
+    alert("my weight is " +weight);
+
+    let check = Adam.checkApple(apple1);
+    alert("number of apple is  " +check);
+
+    let countApple= Adam.eatApple(apple1);
+   alert("so luong qua tao sau khi adam an 1 qua la: " + countApple);
+
+
+
+
+
+</script>
+</body>
+</html>
